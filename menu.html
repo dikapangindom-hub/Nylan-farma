@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produk & Layanan - Nylan Farma</title>
+
+  <!-- Font Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- STYLE -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    /* Cart drawer styles */
+    .cart-drawer{ position:fixed; top:0; right:0; height:100%; width:380px; max-width:92%; transform:translateX(110%); transition:transform .28s ease; z-index:100001; box-shadow:-24px 0 40px rgba(0,0,0,0.08); }
+    .cart-drawer.open{ transform:translateX(0); }
+    .cart-drawer-panel{ background:#fff; height:100%; display:flex; flex-direction:column; padding:1rem; }
+    .cart-drawer-header{ display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f1f1f1; padding-bottom:0.6rem; }
+    .cart-items-list{ flex:1; overflow:auto; padding:0.6rem 0; display:flex; flex-direction:column; gap:0.6rem }
+    .cart-item{ display:flex; gap:0.6rem; align-items:center; padding:0.6rem; border-radius:8px; border:1px solid #f3f3f3 }
+    .cart-item img{ width:64px; height:48px; object-fit:cover; border-radius:6px }
+    .cart-item-details{ flex:1 }
+    .summary-row{ display:flex; justify-content:space-between; padding:0.2rem 0 }
+    .close-drawer{ background:transparent;border:none;cursor:pointer }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-strip"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">
+      <img src="./image/logo-img.png" alt="Logo Nylan" class="logo-img" />
+      <span class="brand-text">NylanFarma.</span>
+    </a>
+
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+
+      <div class="nav-item dropdown">
+        <a href="about.html" class="has-dropdown">Tentang Kami</a>
+        <div class="dropdown-menu">
+          <a href="nilai-inti.html">Nilai Inti Perusahaan</a>
+          <a href="kepengurusan.html">Kepengurusan</a>
+        </div>
+      </div>
+
+      <div class="nav-item dropdown">
+        <a href="menu.html" class="has-dropdown active-nav">Produk</a>
+        <div class="dropdown-menu">
+          <a href="menu.html#produk">Semua Produk</a>
+          <a href="menu.html#obat-resep">Obat Resep Dokter</a>
+          <a href="menu.html#vitamin">Vitamin</a>
+        </div>
+      </div>
+
+      <div class="nav-item dropdown">
+        <a href="#" class="has-dropdown">Layanan</a>
+        <div class="dropdown-menu">
+          <a href="manufaktur.html">Manufaktur Produk</a>
+          <a href="lab.html">Pengujian Laboratorium</a>
+          <a href="komplain.html">Komplain Produk/Jasa</a>
+        </div>
+      </div>
+
+      <a href="karier.html">Karier</a>
+      <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="#search" id="search-trigger"><i data-feather="search"></i></a>
+      <a href="#" id="open-cart-btn" class="cart-link" aria-haspopup="dialog">
+        <i data-feather="shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+
+      <button id="hamburger-menu">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar" id="search-bar">
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Cari produk..." />
+      <button id="search-close"><i data-feather="x"></i></button>
+    </div>
+  </div>
+
+  <!-- PRODUK PAGE HEADER -->
+  <section class="produk-header">
+    <h1>Produk & Layanan</h1>
+    <p>Temukan produk kesehatan berkualitas dari Nylan Farma</p>
+  </section>
+
+  <!-- KATEGORI TABS -->
+  <section class="kategori-tabs-section">
+    <div class="kategori-tabs-container">
+      <button class="kategori-tab-btn active" data-kategori="">Semua Produk</button>
+      <button class="kategori-tab-btn" data-kategori="obat-resep">Obat Resep Dokter</button>
+      <button class="kategori-tab-btn" data-kategori="obat-bebas">Obat Bebas</button>
+      <button class="kategori-tab-btn" data-kategori="obat-injeksi">Obat Injeksi</button>
+      <button class="kategori-tab-btn" data-kategori="vitamin">Vitamin</button>
+      <button class="kategori-tab-btn" data-kategori="obat-topikal">Obat Topikal</button>
+    </div>
+  </section>
+
+  <!-- FILTER & SEARCH -->
+  <section class="produk-filter-section">
+    <div class="filter-wrapper">
+      <div class="filter-group">
+        <label>Harga</label>
+        <select id="harga-filter">
+          <option value="">Semua Harga</option>
+          <option value="0-50000">Rp 0 - Rp 50.000</option>
+          <option value="50000-100000">Rp 50.000 - Rp 100.000</option>
+          <option value="100000-250000">Rp 100.000 - Rp 250.000</option>
+          <option value="250000+">Rp 250.000+</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Sortir</label>
+        <select id="sortir-filter">
+          <option value="newest">Terbaru</option>
+          <option value="price-low">Harga Terendah</option>
+          <option value="price-high">Harga Tertinggi</option>
+          <option value="popular">Paling Populer</option>
+        </select>
+      </div>
+
+      <button id="reset-filter" class="btn-reset">Reset Filter</button>
+    </div>
+  </section>
+
+  <!-- PRODUK GRID -->
+  <section class="produk-section">
+    <div class="produk-container">
+      <div class="produk-grid" id="produk-grid">
+        <!-- Produk akan ditampilkan di sini via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-panel">
+      <header class="cart-drawer-header">
+        <h3>Keranjang Anda</h3>
+        <button id="close-cart-btn" class="close-drawer" aria-label="Tutup"><i data-feather="x"></i></button>
+      </header>
+
+      <div id="empty-cart-message" style="display:none; padding:2rem; text-align:center; color:#666;">Keranjang kosong</div>
+
+      <div id="cart-items" class="cart-items-list"><!-- items rendered by js/cart.js --></div>
+
+      <div class="cart-summary" style="display:none; padding:1rem; border-top:1px solid #eee;">
+        <div class="summary-row"><span>Subtotal</span><span id="subtotal">Rp 0</span></div>
+        <div class="summary-row"><span>Pajak (10%)</span><span id="tax">Rp 0</span></div>
+        <div class="summary-row"><span>Diskon</span><span id="discount">Rp 0</span></div>
+        <div class="summary-row total"><strong>Total</strong><strong id="total">Rp 0</strong></div>
+
+        <div style="margin-top:0.6rem">
+          <h4>Customer Detail</h4>
+          <input id="cust-name" placeholder="Nama" style="width:100%; padding:0.5rem; margin-top:0.4rem;" />
+          <input id="cust-email" placeholder="Email" style="width:100%; padding:0.5rem; margin-top:0.4rem;" />
+          <input id="cust-phone" placeholder="Phone" style="width:100%; padding:0.5rem; margin-top:0.4rem;" />
+          <button id="drawer-checkout" class="btn-primary" style="width:100%; margin-top:0.8rem">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-gold">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="./image/logo-img.png" class="footer-logo" />
+        <p class="footer-brand-name">NylanFarma.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Lokasi Perusahaan</h4>
+          <p>Kawasan Industri Gandus, Blok C-12<br>Palembang, Sumatera Selatan</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Email Resmi</h4>
+          <p>info@nylanfarma.id<br>production@nylanpharma.co.id</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Jam Operasional</h4>
+          <p>Senin–Jumat: 08.00 – 17.00<br>Sabtu: 08.00 – 13.00</p>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2024 Nylan Farma. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./js/products.js"></script>
+  <script src="./js/cart.js"></script>
+  <script src="./js/script.js"></script>
+  <script>
+    feather.replace();
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger-menu');
+    const navNav = document.querySelector('.navbar-nav');
+    if(hamburger) {
+      hamburger.addEventListener('click', () => {
+        navNav.classList.toggle('active');
+      });
+    }
+
+    // Close menu when clicking on a nav link
+    const navLinks = document.querySelectorAll('.navbar-nav > a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navNav.classList.remove('active');
+      });
+    });
+
+    // Dropdown toggle for mobile
+    const dropdownTriggers = document.querySelectorAll('.nav-item.dropdown > a');
+    dropdownTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        // Only prevent default on mobile
+        if(window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = trigger.parentElement;
+          parent.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+  <script>
+    // If the page is loaded with a hash, activate corresponding kategori tab
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const hash = (location.hash || '').replace('#','');
+        if(!hash) return;
+
+        // If hash is 'produk' just scroll to produk-section
+        if(hash === 'produk'){
+          const prod = document.querySelector('.produk-section');
+          if(prod) setTimeout(()=> prod.scrollIntoView({behavior:'smooth'}), 250);
+          return;
+        }
+
+        // Try to find a kategori tab with matching data-kategori
+        const tab = document.querySelector(`.kategori-tab-btn[data-kategori="${hash}"]`);
+        if(tab){
+          tab.click();
+          setTimeout(()=> tab.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+        }
+      } catch(e){ console.warn('hash handler', e); }
+    });
+  </script>
+
+</body>
+</html>

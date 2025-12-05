@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nylan Farma</title>
+
+  <!-- Font Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- STYLE -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+  <div class="top-strip"></div>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar" id="search-bar">
+    <div class="search-container">
+      <div class="search-input-group">
+        <input type="text" id="search-input" placeholder="Cari produk, layanan, atau informasi..." />
+        <button id="search-close"><i data-feather="x"></i></button>
+      </div>
+
+      <div class="search-recommendations">
+        <h4>Rekomendasi Pencarian:</h4>
+        <div class="search-suggestions">
+          <span class="search-suggestion" data-search="obat resep">Obat Resep</span>
+          <span class="search-suggestion" data-search="vitamin">Vitamin</span>
+          <span class="search-suggestion" data-search="produk">Semua Produk</span>
+          <span class="search-suggestion" data-search="manufaktur">Manufaktur</span>
+          <span class="search-suggestion" data-search="laboratorium">Laboratorium</span>
+          <span class="search-suggestion" data-search="berita">Berita</span>
+          <span class="search-suggestion" data-search="kontak">Kontak</span>
+          <span class="search-suggestion" data-search="karier">Karier</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">
+      <img src="./image/logo-img.png" alt="Logo Nylan" class="logo-img" />
+      <span class="brand-text">NylanFarma.</span>
+    </a>
+
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+
+     <div class="nav-item dropdown">
+  <a href="about.html" class="has-dropdown">Tentang Kami</a>
+  <div class="dropdown-menu">
+    <a href="nilai-inti.html">Nilai Inti Perusahaan</a>
+    <a href="kepengurusan.html">Kepengurusan</a>
+    <a href="berita.html">Berita</a>
+  </div>
+</div>
+
+
+      <div class="nav-item dropdown">
+        <a href="menu.html" class="has-dropdown">Produk</a>
+        <div class="dropdown-menu">
+          <a href="menu.html#produk">Semua Produk</a>
+          <a href="menu.html#obat-resep">Obat Resep Dokter</a>
+          <a href="menu.html#vitamin">Vitamin</a>
+        </div>
+      </div>
+
+      <div class="nav-item dropdown">
+        <a href="#" class="has-dropdown">Layanan</a>
+        <div class="dropdown-menu">
+          <a href="manufaktur.html">Manufaktur Produk</a>
+          <a href="lab.html">Pengujian Laboratorium</a>
+          <a href="Komplain-produk-jasa.html">Komplain Produk/Jasa</a>
+        </div>
+      </div>
+
+      <a href="karier.html">Karier</a>
+      <a href="Kontak.html">Kontak</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="#" id="search-trigger"><i data-feather="search"></i></a>
+      <a href="menu.html#produk"><i data-feather="shopping-cart"></i></a>
+
+      <button id="hamburger-menu">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-main">
+    <div class="hero-left">
+      <p class="hero-kicker">Nylan Farma</p>
+      <h1>Solusi Kesehatan Anda</h1>
+      <p class="hero-desc">
+        Memberikan layanan farmasi modern yang menggabungkan profesionalisme apoteker,
+        teknologi digital, dan kemudahan akses bagi masyarakat.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="menu.html" class="btn-primary">Lihat Produk</a>
+        <a href="about.html" class="btn-ghost">Pelajari lebih lanjut</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-produk-header">
+        <h3>Berita</h3>
+        <p>Informasi terkini tentang kegiatan dan inisiatif Nylan Farma.</p>
+      </div>
+
+      <div class="news-slideshow">
+        <img id="news-image" src="./image/Layanan-Pemeriksaan-Kesehatan-Gratis.png" alt="Berita" />
+      </div>
+
+      <div class="hero-produk-footer"></div>
+    </div>
+  </section>
+
+  <!-- KATEGORI PRODUK -->
+  <section class="kategori-panel">
+    <div class="container-kategori">
+      <h2 id="kategori-title">Kategori Produk</h2>
+      <p class="kategori-desc">Temukan kebutuhan kesehatan Anda berdasarkan kategori.</p>
+
+      <nav class="kategori-list">
+        <a class="kategori-item" href="menu.html#resep" data-cat="resep">Obat Resep Dokter</a>
+        <a class="kategori-item" href="menu.html#bebas" data-cat="bebas">Obat Bebas & Terbatas</a>
+        <a class="kategori-item" href="menu.html#injeksi" data-cat="injeksi">Obat Injeksi</a>
+        <a class="kategori-item" href="menu.html#vitamin" data-cat="vitamin">Vitamin</a>
+        <a class="kategori-item" href="menu.html#topikal" data-cat="topikal">Obat Topikal</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  <section class="career" id="career">
+    <div class="career-inner">
+      <p class="career-kicker">Career</p>
+      <h2>Looking for job?</h2>
+      <h3>Find Your Dream Job <br/>Work at NylanFarma</h3>
+      <p class="career-desc">
+        Kami selalu mencari individu dengan semangat tinggi di bidang farmasi, kesehatan,
+        dan teknologi.
+      </p>
+      <a href="#contact" class="btn-primary">Lihat Peluang Kerja</a>
+    </div>
+
+    <div class="career-frame">
+      <a href="karier.html">
+        <img src="./image/job.jpg" alt="Karier" class="career-img" />
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2><span>Kontak</span> Kami</h2>
+    <p class="contact-desc">Hubungi kami untuk informasi produk, kerja sama, atau peluang karier.</p>
+
+    <div class="row">
+      <form class="contact-form">
+        <div class="input-group">
+          <i data-feather="user"></i>
+          <input type="text" placeholder="Nama" required />
+        </div>
+
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input type="email" placeholder="Email" required />
+        </div>
+
+        <div class="input-group">
+          <i data-feather="phone"></i>
+          <input type="tel" placeholder="No. HP" />
+        </div>
+
+        <button type="submit" class="btn-primary">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-gold">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="./image/logo-img.png" class="footer-logo" />
+        <p class="footer-brand-name">NylanFarma.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Lokasi Perusahaan</h4>
+          <p>Kawasan Industri Gandus, Blok C-12<br>Palembang, Sumatera Selatan</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Email Resmi</h4>
+          <p>info@nylanfarma.id<br>production@nylanpharma.co.id</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Jam Operasional</h4>
+          <p>Senin–Jumat: 08.00 – 17.00<br>Sabtu: 08.00 – 13.00</p>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2024 Nylan Farma. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger-menu');
+    const navNav = document.querySelector('.navbar-nav');
+    if(hamburger) {
+      hamburger.addEventListener('click', () => {
+        navNav.classList.toggle('active');
+      });
+    }
+
+    // Close menu when clicking on a nav link
+    const navLinks = document.querySelectorAll('.navbar-nav > a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navNav.classList.remove('active');
+      });
+    });
+
+    // Dropdown toggle for mobile
+    const dropdownTriggers = document.querySelectorAll('.nav-item.dropdown > a');
+    dropdownTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        // Only prevent default on mobile
+        if(window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = trigger.parentElement;
+          parent.classList.toggle('active');
+        }
+      });
+    });
+
+    // Smooth scroll for same-page anchors (adjust for sticky navbar)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(!href || href === '#') return;
+        // only handle same-page anchors
+        if(href.startsWith('#') && document.querySelector(href)){
+          e.preventDefault();
+          const target = document.querySelector(href);
+          const nav = document.querySelector('.navbar');
+          const offset = nav ? nav.offsetHeight + 8 : 0;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+          // update hash without jumping
+          history.replaceState(null, '', href);
+        }
+      });
+    });
+
+    // News slideshow
+    const images = [
+      './image/Layanan-Pemeriksaan-Kesehatan-Gratis.png',
+      './image/Program-Donasi-Obat-dan-Bantuan-Medis.png',
+      './image/Penyuluhan-Kesehatan-Masyarakat.png',
+      './image/Program-Magang-Industri.png'
+    ];
+    let currentIndex = 0;
+    const newsImage = document.getElementById('news-image');
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      newsImage.src = images[currentIndex];
+    }
+
+    // Make image clickable to redirect to news tab
+    newsImage.style.cursor = 'pointer';
+    newsImage.addEventListener('click', () => {
+      window.location.href = 'berita.html';
+    });
+
+    setInterval(changeImage, 3000); // Change image every 3 seconds
+
+    // Search functionality
+    const searchTrigger = document.getElementById('search-trigger');
+    const searchBar = document.getElementById('search-bar');
+    const searchInput = document.getElementById('search-input');
+    const searchClose = document.getElementById('search-close');
+
+    // Show search bar
+    searchTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      searchBar.classList.add('active');
+      searchInput.focus();
+    });
+
+    // Hide search bar
+    searchClose.addEventListener('click', () => {
+      searchBar.classList.remove('active');
+      searchInput.value = '';
+    });
+
+    // Hide search bar when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchBar.contains(e.target) && !searchTrigger.contains(e.target)) {
+        searchBar.classList.remove('active');
+        searchInput.value = '';
+      }
+    });
+
+    // Handle search input
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const query = searchInput.value.trim().toLowerCase();
+        if (query) {
+          performSearch(query);
+        }
+      }
+    });
+
+    // Handle clickable search suggestions
+    const searchSuggestions = document.querySelectorAll('.search-suggestion');
+    searchSuggestions.forEach(suggestion => {
+      suggestion.addEventListener('click', () => {
+        const searchTerm = suggestion.getAttribute('data-search');
+        searchInput.value = searchTerm;
+        performSearch(searchTerm);
+      });
+    });
+
+    // Search function
+    function performSearch(query) {
+      // Define searchable content and their corresponding pages
+      const searchData = {
+        // Products
+        'obat resep': 'menu.html#obat-resep',
+        'obat resep dokter': 'menu.html#obat-resep',
+        'vitamin': 'menu.html#vitamin',
+        'obat bebas': 'menu.html#obat-bebas',
+        'obat terbatas': 'menu.html#obat-bebas',
+        'obat injeksi': 'menu.html#injeksi',
+        'obat topikal': 'menu.html#topikal',
+        'produk': 'menu.html#produk',
+        'semua produk': 'menu.html#produk',
+
+        // Services
+        'manufaktur': 'manufaktur.html',
+        'manufaktur produk': 'manufaktur.html',
+        'laboratorium': 'lab.html',
+        'pengujian laboratorium': 'lab.html',
+        'komplain': 'Komplain-produk-jasa.html',
+        'komplain produk': 'Komplain-produk-jasa.html',
+        'layanan': '#',
+
+        // Company info
+        'tentang kami': 'about.html',
+        'nilai inti': 'nilai-inti.html',
+        'kepengurusan': 'kepengurusan.html',
+        'berita': 'berita.html',
+        'news': 'berita.html',
+
+        // Career
+        'karier': 'karier.html',
+        'karir': 'karier.html',
+        'kerja': 'karier.html',
+        'job': 'karier.html',
+
+        // Contact
+        'kontak': 'Kontak.html',
+        'contact': 'Kontak.html',
+        'hubungi': 'Kontak.html',
+
+        // Home
+        'home': 'index.html',
+        'beranda': 'index.html'
+      };
+
+      // Check for exact matches first
+      if (searchData[query]) {
+        window.location.href = searchData[query];
+        return;
+      }
+
+      // Check for partial matches
+      for (const [key, url] of Object.entries(searchData)) {
+        if (key.includes(query) || query.includes(key)) {
+          window.location.href = url;
+          return;
+        }
+      }
+
+      // If no match found, redirect to products page as default
+      window.location.href = 'menu.html#produk';
+    }
+  </script>
+
+</body>
+</html>
